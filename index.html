@@ -325,116 +325,14 @@
 
       
         
-          
-            <blockquote>
-<p><i class="fa fa-exclamation"></i> 实验中功能</p>
-</blockquote>
-<h2 id="before-amp-after"><a href="#before-amp-after" class="headerlink" title="::before &amp; ::after"></a>::before &amp; ::after</h2><p>在元素固定的首尾插入内容 content</p>
-<ul>
-<li>content 的内容可以是 string 或 image</li>
-<li>在 Dom 树可以见到该伪元素</li>
-<li>: vs :: 来区别伪类和伪元素，对于伪元素可以两种方式都可以</li>
-<li>IE8只能识别:</li>
-</ul>
-<h2 id="active"><a href="#active" class="headerlink" title=":active"></a>:active</h2><p>元素被激活时触发，如 <code>a</code> 链接被点击，按下还没松开时。</p>
-<ul>
-<li>最常见的场景是 a 链接被激活，:active 也可适用于任意场景</li>
-<li>对于 a 链接所有状态先后顺序记忆方式：“LV HA”</li>
-</ul>
-<h2 id="any-link"><a href="#any-link" class="headerlink" title=" :any-link"></a><i class="fa fa-exclamation"></i> :any-link</h2><p>选择所有超链接元素。它匹配所有满足 :link 元素或 :visited 的元素</p>
-<ul>
-<li>拥有[href]属性的元素都可将其认为是超链接元素</li>
-<li>该选择器为level4，若想兼容其它浏览器需要带上浏览器前缀，如：<br>:-webkit-any-link {}<br>:-moz-any-link {}<br>: any-link {}</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:any-link</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="adjacent-slibling-相邻兄弟元素选择器"><a href="#adjacent-slibling-相邻兄弟元素选择器" class="headerlink" title="adjacent slibling 相邻兄弟元素选择器"></a>adjacent slibling 相邻兄弟元素选择器</h2><p>选择相邻兄弟元素 +</p>
-<ul>
-<li>仅当第二个元素紧跟在第一个元素后，并且从属于同一个父元素时才会匹配到第二个元素</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>get selected<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>p11<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>span<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>not get selected<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> + <span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="attribute"><a href="#attribute" class="headerlink" title="[attribute]"></a>[attribute]</h2><p>CSS属性选择器根据给定属性是否存在或属性的值匹配元素。<br>如下示例，精确匹配 链接地址是 <a href="https://www.synyi.com" target="_blank" rel="noopener">https://www.synyi.com</a> 的 <code>a</code> 元素，设置 red 颜色。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.synyi.com"</span>&gt;</span>https://www.synyi.com<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.baidu.com"</span>&gt;</span>https://www.baidu.com<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href=<span class="string">"https://www.synyi.com"</span>]</span> &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>除了精确匹配，总计有下述7种方式匹配方式</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.synyi.com"</span>&gt;</span>synyi<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://xxxxx.org"</span>&gt;</span>政府门户网站 1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://study.com"</span> <span class="attr">data-type</span>=<span class="string">"     study     "</span>&gt;</span>学习网站 1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://study.com"</span> <span class="attr">data-type</span>=<span class="string">"studyMath"</span>&gt;</span>数学学习网站<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://study.com"</span> <span class="attr">data-type</span>=<span class="string">"math-study"</span>&gt;</span>数学学习网站 1<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://study.com"</span> <span class="attr">data-type</span>=<span class="string">"math_study"</span>&gt;</span>数学学习网站 2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://study.com"</span> <span class="attr">data-type</span>=<span class="string">"study-english"</span>&gt;</span>英语学习网站<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href]</span> &#123;</span><br><span class="line">  color: #009FFF; // 匹配所有a元素</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href=<span class="string">"https://www.synyi.com"</span>]</span> &#123;</span><br><span class="line">  color: yellow; // 精确匹配 href 值完全相同的a元素</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href*=<span class="string">".org"</span>]</span> &#123;</span><br><span class="line">  color: black; // 匹配 href 值包含的 '.org'的a元素</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[data-type~=<span class="string">"study"</span>]</span> &#123;</span><br><span class="line">  color: green; // 匹配 data-type 值以-分隔且值study存在列表内 的a元素</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[data-type^=<span class="string">"study"</span>]</span> &#123;</span><br><span class="line">  color: blue; // 匹配 data-type 值以study开头的a元素</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[data-type|=<span class="string">"math"</span>]</span> &#123;</span><br><span class="line">  color: red; // 匹配 data-type 值以-分隔且值math出现在第一个位置 的a元素</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[data-type$=<span class="string">"english"</span>]</span> &#123;</span><br><span class="line">  color: chocolate; // 匹配 data-type 值以study结尾的a元素</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="./%5Battribute%5D.png" alt=""></p>
-<table>
-<thead>
-<tr>
-<th align="left">Syntax</th>
-<th align="left"></th>
-<th align="left">example</th>
-<th align="left"></th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">[attr]</td>
-<td align="left">elements with an attribute name of attr</td>
-<td align="left">img[alt]</td>
-<td align="left">匹配到 alt=”abstract art” alt=”athlete starting”</td>
-</tr>
-<tr>
-<td align="left">[attr=”value”]</td>
-<td align="left">属性名称与值完全匹配</td>
-<td align="left">img[alt=”art”]</td>
-<td align="left">匹配到 alt=”art” 匹配不到 alt=”athlete starting”</td>
-</tr>
-<tr>
-<td align="left">[attr*=”value”]</td>
-<td align="left">Value contains</td>
-<td align="left">img[alt*=”art”]</td>
-<td align="left">匹配到 alt=”abstract art” alt=”athlete starting”</td>
-</tr>
-<tr>
-<td align="left">[attr~=”value”]</td>
-<td align="left">Value is in a space-separated list</td>
-<td align="left">img[alt~=”art”]</td>
-<td align="left">匹配到 alt=”abstract art” 不能匹配 alt=”abstractart “</td>
-</tr>
-<tr>
-<td align="left">[attr^=”value”]</td>
-<td align="left">Value starts with</td>
-<td align="left">img[alt^=”art”]</td>
-<td align="left">匹配到 alt=”art abstract” 不能匹配 alt=”abstract art”</td>
-</tr>
-<tr>
-<td align="left">[attr｜=”value”]</td>
-<td align="left">Value is first in a dash-separated list</td>
-<td align="left">img[alt｜=”art”]</td>
-<td align="left">匹配到 alt=”art-abstract” 不能匹配 alt=”abstract-art”</td>
-</tr>
-<tr>
-<td align="left">[attr$=”value”]</td>
-<td align="left">Value ends with</td>
-<td align="left">img[alt$=”art”]</td>
-<td align="left">匹配到 alt=”abstractart” 匹配 alt=”abstract-art”</td>
-</tr>
-</tbody></table>
-<p><code>[attribute]</code>的使用除了上述单个属性匹配还可以组合使用，比如：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a[href="https://study.com"][data-type="studyMath"] &#123; ... &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="blank"><a href="#blank" class="headerlink" title=" :blank"></a><i class="fa fa-exclamation"></i> :blank</h2><p>实验中的功能，目前没有浏览器支持～</p>
-<p><code>:blank</code> 伪类基于 <code>:empty</code> 伪类功能之上，<code>:blank</code> 和 <code>:empty</code>都能够匹配那些没有内容的元素或内容仅仅是comment的元素，如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">p</span><span class="selector-pseudo">:blank</span>, <span class="selector-tag">p</span><span class="selector-pseudo">:empty</span> &#123; <span class="attribute">display</span>:none &#125;;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="comment">&lt;!-- 这是一段注释 --&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>但是如果是下面的写法，<code>:empty</code>将不会匹配到：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 这是一段注释 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 这是一段注释 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="checked"><a href="#checked" class="headerlink" title=":checked"></a>:checked</h2><p>:checked CSS 伪类选择器表示任何处于选中状态的radio(<input type="radio">), checkbox (<input type="checkbox">) 或(“select”) 元素中的option HTML元素(“option”)</p>
-<p>如下示例，我们可以修改选中状态的label字体颜色，可以利用选中状态实现无JS参与的toggle交互效果。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radioItem"</span>&gt;</span><span class="tag">&lt;<span class="name">label</span>&gt;</span>radio1<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"radioItem"</span>&gt;</span><span class="tag">&lt;<span class="name">label</span>&gt;</span>radio2<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span><span class="tag">&lt;<span class="name">label</span>&gt;</span>checkbox1<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span><span class="tag">&lt;<span class="name">label</span>&gt;</span>checkbox2<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">class</span>=<span class="string">"expand-trigger"</span>&gt;</span><span class="tag">&lt;<span class="name">label</span>&gt;</span>toggle expand<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"expand"</span>&gt;</span>expand<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  *<span class="selector-pseudo">:checked</span> + <span class="selector-tag">label</span>  &#123; <span class="attribute">color</span>: <span class="number">#009FFF</span>; &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-id">#expand</span> &#123; <span class="attribute">visibility</span>: collapse; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="css">  <span class="selector-class">.expand-trigger</span><span class="selector-pseudo">:checked</span> ~ <span class="selector-id">#expand</span> &#123; <span class="attribute">visibility</span>: visible; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="gt"><a href="#gt" class="headerlink" title="&gt;"></a>&gt;</h2><p>当使用  &gt; 选择符分隔两个元素时,它只会匹配那些作为第一个元素的直接后代(子元素)的第二元素集</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Span 1. set bg.</span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>Span 2. set bg.<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Span 3. Not set bg<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          
+          <p>CSS 选择器学习</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/07/17/1.css/selectors/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
