@@ -481,118 +481,103 @@ body {
     width: 900px;
   }
 }
-pre,
-.highlight {
-  overflow: auto;
-  margin: 20px 0;
-  padding: 0;
-  font-size: 13px;
-  color: #4d4d4c;
-  background: #f7f7f7;
+.highlight,
+pre {
+  background: #1e1e1e;
+  color: #a3d5f2;
   line-height: 1.6;
+  margin: 0 auto 20px;
 }
 pre,
 code {
   font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 }
 code {
-  padding: 2px 4px;
-  word-wrap: break-word;
-  color: #555;
   background: #eee;
   border-radius: 3px;
-  font-size: 13px;
+  color: #555;
+  padding: 2px 4px;
 }
-pre {
-  padding: 10px;
-}
-pre code {
-  padding: 0;
-  color: #4d4d4c;
-  background: none;
-  text-shadow: none;
-}
-.highlight {
-  border-radius: 1px;
+.highlight *::selection {
+  background: #d6d6d6;
 }
 .highlight pre {
-  border: none;
+  border: 0;
   margin: 0;
   padding: 10px 0;
 }
 .highlight table {
+  border: 0;
   margin: 0;
   width: auto;
-  border: none;
 }
 .highlight td {
-  border: none;
+  border: 0;
   padding: 0;
 }
 .highlight figcaption {
-  font-size: 1em;
-  color: #4d4d4c;
-  line-height: 1em;
-  margin-bottom: 1em;
-}
-.highlight figcaption:before,
-.highlight figcaption:after {
-  content: " ";
-  display: table;
-}
-.highlight figcaption:after {
-  clear: both;
+  background: #1e1e1e;
+  color: #a3d5f2;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  line-height: 1.2;
+  padding: 0.5em;
 }
 .highlight figcaption a {
-  float: right;
-  color: #4d4d4c;
+  color: #a3d5f2;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #4d4d4c;
+  border-bottom-color: #a3d5f2;
 }
 .highlight .gutter pre {
+  background: #1e1e1e;
+  color: #869194;
   padding-left: 10px;
   padding-right: 10px;
-  color: #869194;
   text-align: right;
-  background-color: #eff2f3;
 }
 .highlight .code pre {
-  width: 100%;
+  background: #1e1e1e;
   padding-left: 10px;
-  padding-right: 10px;
-  background-color: #f7f7f7;
+  width: 100%;
 }
-.highlight .line {
-  height: 20px;
-}
-.gutter {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+span.selector-tag {
+  color: #d9d5ac;
 }
 .gist table {
   width: auto;
 }
 .gist table td {
-  border: none;
+  border: 0;
+}
+pre {
+  overflow: auto;
+  padding: 10px;
+}
+pre code {
+  background: none;
+  color: #a3d5f2;
+  font-size: 14px;
+  padding: 0;
+  text-shadow: none;
 }
 pre .deletion {
-  background: #fdd;
+  background: #800000;
 }
 pre .addition {
-  background: #dfd;
+  background: #008000;
 }
 pre .meta {
-  color: #8959a8;
+  color: #cecaa3;
 }
 pre .comment {
-  color: #8e908c;
+  color: #708e57;
 }
 pre .variable,
 pre .attribute,
 pre .tag,
+pre .name,
 pre .regexp,
 pre .ruby .constant,
 pre .xml .tag .title,
@@ -602,11 +587,12 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #c82829;
+  color: #639ed1;
 }
 pre .number,
 pre .preprocessor,
 pre .built_in,
+pre .builtin-name,
 pre .literal,
 pre .params,
 pre .constant,
@@ -616,15 +602,15 @@ pre .command {
 pre .ruby .class .title,
 pre .css .rules .attribute,
 pre .string,
+pre .symbol,
 pre .value,
 pre .inheritance,
 pre .header,
 pre .ruby .symbol,
 pre .xml .cdata,
 pre .special,
-pre .number,
 pre .formula {
-  color: #718c00;
+  color: #c4917c;
 }
 pre .title,
 pre .css .hexcolor {
@@ -642,7 +628,7 @@ pre .coffeescript .title {
 }
 pre .keyword,
 pre .javascript .function {
-  color: #8959a8;
+  color: #b88bbb;
 }
 .full-image.full-image.full-image.full-image {
   border: none;
@@ -1822,7 +1808,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #17e5ff;
+  background: #ff130a;
 }
 .links-of-blogroll {
   font-size: 13px;
