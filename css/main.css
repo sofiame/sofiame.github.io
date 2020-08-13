@@ -498,6 +498,9 @@ code {
   color: #555;
   padding: 2px 4px;
 }
+.highlight {
+  overflow: auto;
+}
 .highlight *::selection {
   background: #d6d6d6;
 }
@@ -554,6 +557,7 @@ span.selector-tag {
 pre {
   overflow: auto;
   padding: 10px;
+  overflow: auto;
 }
 pre code {
   background: none;
@@ -1808,7 +1812,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #13ff03;
+  background: #753b42;
 }
 .links-of-blogroll {
   font-size: 13px;
